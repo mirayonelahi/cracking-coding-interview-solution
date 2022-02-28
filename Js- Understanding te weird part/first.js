@@ -307,3 +307,228 @@ remain inside function a() . so for this example myVar will be 2
  * false || 'hello' -> retruns 'hello'
  * 
  */
+
+/**
+ * *Objects : name value pair..can be nested
+ * - the can also contain method
+ * - preferred to use dot operators
+ *  * Objects Literals- we can do same thing in different ways
+ * - like we can init object by new Object()
+ * - also we can init by shorthand {}
+ */
+
+/**
+ * * Namespace : A container for variables and functions
+ * Typically to keep variables and functions with the same name separate
+ * in other languages this containers used in a different way
+ * in js we use object literals as a namespaces for name conflicting
+ * its call faking namespaces in js
+ * 
+ */
+
+/**
+ * * JSON - inspired by js object literal
+ * but are those same thing?
+ * json is subset of object literal
+ * so anything inside json valid is valid as object literal
+ * but anything inside object literal valid is not valid in js
+ * 
+ * we can always convert each other in js
+ * 
+ * JSON.stringify  obj to json
+ * JSON.parse --- json to obj
+ */
+/**
+ * * First class functions -  Functions are Objects
+ * everything you can do with other types you can do
+ * with functions
+ * - Assign them to variables
+ * - pass them around
+ * - create them on the fly
+ * 
+ * its like inside object you are giving commands to do something
+ * 
+ * wow!! we can add properties inside function. whaaat?
+ * haha! we can . as in js functions are objects
+ * 
+ * inside function there is a property name CODE
+ * 
+ * functions are more than containers of code
+ * 
+ * * Expression - A unit of code that results in a value
+ * - doesnt have to a variable
+ * like.. 1+2;  its an expression
+ * if(a===3) here (a===3) is a expression
+ * 
+ * function statement vs function expression?
+ * 
+ * here for this function hoisting is valid and can be used
+ * greet()
+ * 
+ * this is example of function statement
+ * function greet(){
+ *  console.log("hey")
+ * }
+ * 
+ * this is example of function expression
+ * 
+ * var anonmousGreet = function(){
+ *   console.log("hey")
+ * }
+ * anonmousGreet()
+ * 
+ * for this example if we call the function before its declared. what would happen?
+ * 
+ * as its put it inside variable . the variable at initialied called undefined.
+ * then while in execution context environment anonmousGreet() is called . it see
+ * that as undefined and want to call undefined as function call.
+ * then
+ * 
+ * use anonymous function
+ * 
+ * we can pass everything as a parameter inside a function.
+ * like string, number , array , objects
+ * even another anonymous function can be pass as parameter
+ * 
+ * these first class functions in js are so great and awesome.
+ * it all happens because in js functions are ***Objects***
+ */
+
+/**
+ * * BY Value  vs By Reference
+ * 
+ *   All the primitive types in js are by value
+ *   as it copy the value and have new own locations
+ * 
+ *  for Object. here object is all type of objects in js like array, function, obj literal
+ *  
+ *  a = {}
+ *  b = a
+ * 
+ *  here when a is assigned to b
+ *  for b no copy and new memory is created
+ *  rather its pointing to the same object of a
+ *  so anything change happens in any of them
+ *  both got effected
+ * 
+ *  this is called by reference. and all object 
+ *  act by reference.
+ * 
+ *  * Mutate - To change something
+ *  * Immutable - can't be changed
+ * 
+ *  even we pass obj in parameter . that is also 
+ *  passing by reference and changing all the object pointing to that memory space
+ * 
+ *  but there is a special case.
+ *  there is no way we can control mutable and immutability is js
+ * 
+ * equal operator (=) sets up new memory space ( new address )
+ * so if we reuse that operator like a = {greeting : 'howdy' }
+ * here a will create a new adress for the object
+ * 
+           // by value (primitives)
+            var a = 3;
+            var b;
+
+            b = a;
+            a = 2;
+
+            console.log(a);
+            console.log(b);
+
+            // by reference (all objects (including functions))
+            var c = { greeting: 'hi' };
+            var d;
+
+            d = c;
+            c.greeting = 'hello'; // mutate
+
+            console.log(c);
+            console.log(d);
+
+            // by reference (even as parameters)
+            function changeGreeting(obj) {
+                obj.greeting = 'Hola'; // mutate   
+            }
+
+            changeGreeting(d);
+            console.log(c);
+            console.log(d);
+
+            // equals operator sets up new memory space (new address)
+            c = { greeting: 'howdy' };
+            console.log(c);
+            console.log(d);
+ * 
+ */
+
+/**
+ * * this keyword
+ * this points to global object at first if nothing there
+ * console.log(this) // if this reuns it will show window object
+ * 
+ * function a(){
+ * console.log(this)
+ * }
+ * a()
+ * this also shows global object window
+ * 
+ * whenever we create function (function expression / function statement)
+ * all the time this inside them will point to global object
+ * 
+ * so we can moderate global spaces using this keyword
+ * which might cause a lot of problems.
+ * So its important to know this concept clearly.
+ * 
+ * function a() {
+    console.log(this);
+    this.newvariable = 'hello';
+}
+
+var b = function() {
+    console.log(this);   
+}
+
+a();
+
+console.log(newvariable); // not good!
+
+b();
+
+var c = {
+    name: 'The c object',
+    log: function() {
+        var self = this;
+        
+        self.name = 'Updated c object';
+        console.log(self);
+        
+        var setname = function(newname) {
+            self.name = newname;   
+        }
+        setname('Updated again! The c object');
+        console.log(self);
+    }
+}
+
+c.log();
+
+ * the upper code needs to be revised and study again from the video
+ * 
+ * 
+ * 
+ * 
+ *  */            
+
+/**
+ * * Arrays - collection of anything
+ * 
+ * can contain obj, function also
+ * 
+ */
+/**
+ * * Arguments : the parameters you pass to a function
+ * * javascript gives you a keyword of the same name which contains them all
+ * 
+ */
