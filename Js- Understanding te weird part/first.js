@@ -530,5 +530,156 @@ c.log();
 /**
  * * Arguments : the parameters you pass to a function
  * * javascript gives you a keyword of the same name which contains them all
+ *  in js not all the parameter needs to be passed. it can be passed later also creaating hoising
+ * 
+ *  while we console log arguments we can see that those are not exactly as array.
+ *  in js those are called "array like".
+ *  
+ *  now we use spread operator (...) to handle with arguments.
+ *  
+ *  we can also destructure the arguments
  * 
  */
+
+/**
+ * * Function Overloading
+ * 
+ *  in js we dont have anything like function overloading like other languages.
+ *  
+ *  As js function is first class functions. we can use that feature to make this as 
+ *  functional overloading like others. 
+ *  Using default value and  also if/else condition or using other patterns we can use function overloading feature
+ * 
+ */
+
+/**
+ * * Syntax parsers - it reads code character by character
+ * - making assumptions
+ * - in js semicolon is optional
+ * 
+ *  but for that reason we have to be careful and understand how it works under the hood.
+ *  as we press a enter to go next line syntax parser in js automatically put a semicolon
+ *  so best practise is give our own semicolon to avoid unnecessary bugs
+ *  
+ * lets see and example for this -
+ * 
+  function getPerson(){
+
+  return 
+      {
+        firstname :'Tony'
+      }
+
+}
+
+console.log(getPerson())
+
+what will be output for this code? an object?
+-- output is undefined.!! why is that?
+  we see after return we we go to next line and { started. 
+  as we  went to new line the syntax parser thinks line ended and put a ;
+  so the fix would be-
+      function getPerson(){
+        return  {
+              firstname :'Tony'
+                }
+      }
+      console.log(getPerson())
+      ** so always try to use opening parenthesis in same line. it will help a lot to avoid unnecessary bugs.
+      we have to orevent automatic semicolon insertion
+      ** always put curly braces in same line of functions - best practice
+
+      /**
+       * * Whitespace-  invisible characters that create literal 'space' in your written code
+       * - carriage returns, tabs, spaces
+       */
+
+ /**
+  * * Immediately Invoked function expressions (IIFE)S
+  * 
+  * this will runn immediately
+  * 
+  * var greet = function(name){
+  console.log("hey "+name);
+    }("hey")
+   // returns "hey "
+  * but one things needs to be carefull now  wehn we call greet.. we dont call it like greet()
+   we call like like greet and it returns a string
+  * when we immediate invoke function it converts this as string in this scenario  
+
+  * we cant put an anonymous function just inside a code without putting it in variable
+  * as the syntax parser will read this as function statement and want to have a function name
+  * as its anonymous its dont have name so js engine will throw an error
+  * how can we fix this??
+  * 
+  * we can wrap the whole anonymous function inside a ( ) .
+  * how can we run this btw?
+  * we can use the immediatly invoked function feature here
+  *   (function(){
+     console.log("dont talk");
+   })()
+  * it has so much significance 
+  */
+      
+/**
+ * we already learned --
+ * all things work under the hood
+ * execution stack
+ * first class functions
+ * execution context
+ * immediately invoked function
+ * scope chain
+ * outer execution context
+ * garbage collection
+ * 
+ * whats all these fro??
+ * to understand closures!!!
+ * 
+ * 
+ * * Closures - 
+ * 
+ * free variable
+ * 
+ * 
+function buildFunctions(){
+  var arr=[]
+  for(var i=0; i <3 ; i++){
+    arr.push(
+      function(){
+        console.log(i);
+      }
+    )
+  }
+  return arr
+}
+
+var fs= buildFunctions();
+
+fs[0]() //returns 3
+fs[1]() //returns 3
+fs[2]() //returns 3
+
+//another example
+
+function buildFunctions(){
+  var arr=[]
+  for(let i=0; i <3 ; i++){
+    arr.push(
+      function(){
+        console.log(i);
+      }
+    )
+  }
+  return arr
+}
+
+var fs= buildFunctions();
+
+fs[0]() //returns 0
+fs[1]() //returns 1
+fs[2]() //returns 2
+
+
+ */
+  
+//lets run a classic clousure exampple
