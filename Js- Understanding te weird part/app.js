@@ -679,7 +679,82 @@ fs[0]() //returns 0
 fs[1]() //returns 1
 fs[2]() //returns 2
 
+** Function Factories
 
- */
+
+function makeGreeting(language){
+
+  if(language==='en' ){
+    return function greet(fName, lName){
+      return (`Hey ${fName} ${lName}`);
+    };
+  }
+
+  if(language==='es' ){
+    return function greet(fName, lName){
+      return (`Hola ${fName} ${lName}`);
+    };
+  }
+
+}
+let greetEngish = makeGreeting('en');
+let greetSpanish = makeGreeting('es');
+
+console.log(greetEngish('marry' , 'jane')); // returns Hey marry jane
+
+// using settimer/jquery is using first class function and closures
+
+function sayHi(){
   
-//lets run a classic clousure exampple
+  let greet = "Hi";
+
+  setTimeout(function(){ console.log(greet+ ' jack');}, 3000 );
+
+}
+console.log("yooo");
+
+sayHi()
+ */
+
+/**
+ * *Callback function - A function you give to another function,
+ *  *                 to be run when the function is finished
+ * so the function you call, 'calls back' by calling the function you gave it 
+ * when it finishes.
+ * 
+ * 
+function tellMeWhenDone (callback){
+  
+  var x = 10
+  callback()
+}
+
+tellMeWhenDone(function(){
+  console.log("yo");
+})
+ * 
+ */
+
+/**
+ * lets talk about functions again. functions are just objects
+ * so far we know that inside a fucntion there is a Name property which is optional and can be anonymous
+ * there is a code property which is invocable()
+ * and here comes --
+ * there is als0--
+ * * Call()  -    apply()  -  bind()
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+const hey=()=>{
+  console.log('hey');
+
+
+
+  
+  
+};
