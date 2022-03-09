@@ -147,7 +147,6 @@ remain inside function a() . so for this example myVar will be 2
 -- `let` creates a block scope -- only available inside the block 
  */
 
-
 /**
  * * Asynchronous - More than one at a time
  * 
@@ -214,25 +213,25 @@ remain inside function a() . so for this example myVar will be 2
  */
 
 /**
- * 
+ *
  * * Dynamic Typing :
  * - you dont tell the engine what type of data a variable holds
  * - it figures out while your code is running / during the execution
- * 
+ *
  * other languages like c, java has static typing. you declare the type ahead of time
- * 
+ *
  * * primitive types- a type of data that represents a single value and not an object
- * 
+ *
  * 6 types
- * 
+ *
  * undefined - lack of existence but dont set any variable with this
  * null - lack of existence but this one you can set variable
  * boolean - true or false
  * number - js only has one number type and its floating point number
  * string- sequence of characters
  * symbol - used in es6 and new
- * 
- * 
+ *
+ *
  */
 
 /**
@@ -264,17 +263,17 @@ remain inside function a() . so for this example myVar will be 2
  */
 /**
  * * Coercion - Converting a value from one type to another
- * * Comparision Operator 
- * 
+ * * Comparision Operator
+ *
  * console.log(3<2<1)-- what output ??
  * tt shows true. because left to right assosiativity
- * 
+ *
  * it will first check (3<2) which is false then (false < 1)?
- * false < 1 ? -> false is falsy value it coerced to 0 
+ * false < 1 ? -> false is falsy value it coerced to 0
  * and 0 < 1 so it returns true
- * be careful for coercion ... 
- * 
- *  if we typecast -- Number(undefined)  returns NaN 
+ * be careful for coercion ...
+ *
+ *  if we typecast -- Number(undefined)  returns NaN
  *  Number (null) -- returns 0 (which we should be aware of as it can create a bug)
  *  Number(false) -> returns 0
  *  How to stop Coercing? //side effects
@@ -285,27 +284,27 @@ remain inside function a() . so for this example myVar will be 2
  *  "" ==  0 returns true
  *  "" == false true
  *  == equality   === strict equality
- * 
+ *
  * whats the use of coercion then?
- * we can take the truthy and falsy value power 
- * for cheking existance -- validations -- 
+ * we can take the truthy and falsy value power
+ * for cheking existance -- validations --
  * let a;
  * if(a) { console.log("anything") }
  * here we can see with the use of coercion we are cheking the value
  * undefined - empty string - null all will be treated as false
  * be careful as 0 will be treated as false also in that case
  * if(a || a===0) { // code }
- * 
-*/ 
+ *
+ */
 
 /**
  * * Default Value
  * if any function has parameter but it is called without passing any parameter
  * then it  can cause some bugs. we can give default parameter to solve this issue
- * 
+ *
  * false || true -> returns true
  * false || 'hello' -> retruns 'hello'
- * 
+ *
  */
 
 /**
@@ -323,7 +322,7 @@ remain inside function a() . so for this example myVar will be 2
  * in other languages this containers used in a different way
  * in js we use object literals as a namespaces for name conflicting
  * its call faking namespaces in js
- * 
+ *
  */
 
 /**
@@ -332,9 +331,9 @@ remain inside function a() . so for this example myVar will be 2
  * json is subset of object literal
  * so anything inside json valid is valid as object literal
  * but anything inside object literal valid is not valid in js
- * 
+ *
  * we can always convert each other in js
- * 
+ *
  * JSON.stringify  obj to json
  * JSON.parse --- json to obj
  */
@@ -345,51 +344,51 @@ remain inside function a() . so for this example myVar will be 2
  * - Assign them to variables
  * - pass them around
  * - create them on the fly
- * 
+ *
  * its like inside object you are giving commands to do something
- * 
+ *
  * wow!! we can add properties inside function. whaaat?
  * haha! we can . as in js functions are objects
- * 
+ *
  * inside function there is a property name CODE
- * 
+ *
  * functions are more than containers of code
- * 
+ *
  * * Expression - A unit of code that results in a value
  * - doesnt have to a variable
  * like.. 1+2;  its an expression
  * if(a===3) here (a===3) is a expression
- * 
+ *
  * function statement vs function expression?
- * 
+ *
  * here for this function hoisting is valid and can be used
  * greet()
- * 
+ *
  * this is example of function statement
  * function greet(){
  *  console.log("hey")
  * }
- * 
+ *
  * this is example of function expression
- * 
+ *
  * var anonmousGreet = function(){
  *   console.log("hey")
  * }
  * anonmousGreet()
- * 
+ *
  * for this example if we call the function before its declared. what would happen?
- * 
+ *
  * as its put it inside variable . the variable at initialied called undefined.
  * then while in execution context environment anonmousGreet() is called . it see
  * that as undefined and want to call undefined as function call.
  * then
- * 
+ *
  * use anonymous function
- * 
+ *
  * we can pass everything as a parameter inside a function.
  * like string, number , array , objects
  * even another anonymous function can be pass as parameter
- * 
+ *
  * these first class functions in js are so great and awesome.
  * it all happens because in js functions are ***Objects***
  */
@@ -519,37 +518,37 @@ c.log();
  * 
  * 
  * 
- *  */            
+ *  */
 
 /**
  * * Arrays - collection of anything
- * 
+ *
  * can contain obj, function also
- * 
+ *
  */
 /**
  * * Arguments : the parameters you pass to a function
  * * javascript gives you a keyword of the same name which contains them all
  *  in js not all the parameter needs to be passed. it can be passed later also creaating hoising
- * 
+ *
  *  while we console log arguments we can see that those are not exactly as array.
  *  in js those are called "array like".
- *  
+ *
  *  now we use spread operator (...) to handle with arguments.
- *  
+ *
  *  we can also destructure the arguments
- * 
+ *
  */
 
 /**
  * * Function Overloading
- * 
+ *
  *  in js we dont have anything like function overloading like other languages.
- *  
- *  As js function is first class functions. we can use that feature to make this as 
- *  functional overloading like others. 
+ *
+ *  As js function is first class functions. we can use that feature to make this as
+ *  functional overloading like others.
  *  Using default value and  also if/else condition or using other patterns we can use function overloading feature
- * 
+ *
  */
 
 /**
@@ -594,7 +593,7 @@ what will be output for this code? an object?
        * - carriage returns, tabs, spaces
        */
 
- /**
+/**
   * * Immediately Invoked function expressions (IIFE)S
   * 
   * this will runn immediately
@@ -620,7 +619,7 @@ what will be output for this code? an object?
    })()
   * it has so much significance 
   */
-      
+
 /**
  * we already learned --
  * all things work under the hood
@@ -742,19 +741,10 @@ tellMeWhenDone(function(){
  * and here comes --
  * there is als0--
  * * Call()  -    apply()  -  bind()
- * 
- * 
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
+ *
+ *
  */
-
-const hey=()=>{
-  console.log('hey');
-
-
-
-  
-  
-};
